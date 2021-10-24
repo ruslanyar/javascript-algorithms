@@ -4,22 +4,22 @@
  * Напишите функцию findVowels(str), принимающую на вход кириллическую
  * строку str  и возвращающую количество гласных, содержащихся в этой строке.
  * Для вашего удобства вот массив кириллических гласных:
- * 
+ *
  * ['а', 'я', 'о', 'ё', 'у', 'ю', 'ы', 'и', 'э', 'е'].
  *
 */
 
 function findVowels(str) {
-    const vowels = ['а', 'я', 'о', 'ё', 'у', 'ю', 'ы', 'и', 'э', 'е'];
-    let acc = 0;
-  
-    for (let i = 0; i < str.length; i++) {
-      if (vowels.includes(str[i].toLowerCase())) {
-        acc += 1;
-      };
+  const vowels = ['а', 'я', 'о', 'ё', 'у', 'ю', 'ы', 'и', 'э', 'е'];
+  let counter = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i].toLowerCase())) {
+      counter += 1;
     };
-    
-    return acc;
+  };
+
+  return counter;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

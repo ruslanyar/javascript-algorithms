@@ -7,25 +7,23 @@
 */
 
 function capitalize(str) {
-  if (str === ' ') {
-    return str;
-  };
+  if (str === ' ') return str;
 
-  const arr = str.split(' ');
-  
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === '') {
-      arr.splice(i, 1);
+  const array = str.split(' ');
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === '') {
+      array.splice(i, 1);
       i--;
     };
   };
-  
-  for (let i = 0; i < arr.length; i++) {
-    arr[i] = arr[i][0].toUpperCase() + arr[i].toLowerCase().slice(1);
+
+  for (let i = 0; i < array.length; i++) {
+    array[i] = array[i][0].toUpperCase() + array[i].toLowerCase().slice(1);
   };
-  
-  str = arr.join(' ');
-  
+
+  str = array.join(' ');
+
   return str;
 }
 
