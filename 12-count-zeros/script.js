@@ -7,7 +7,15 @@
 */
 
 function countZeros(n) {
-    // Напишите код здесь
+    let counter = 0;
+    
+    for (let i = 10; i <= n; i++) {
+        String(i).split('').forEach(item => {
+            if (item === '0') counter++;
+        })
+    }
+
+    return counter;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

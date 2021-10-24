@@ -8,7 +8,20 @@
 */
 
 function intersection(arr1, arr2) {
-    // Напишите код здесь
+    const resArr = [];
+    arr1.forEach(function (item) {
+        for (let i = 0; i < arr2.length; i++) {
+            if (item === arr2[i]) {
+                resArr.unshift(item);
+            };
+        };
+    });
+    
+    const uniq = resArr.filter((el, index) => {
+        return resArr.indexOf(el) === index;
+    });
+    
+    return uniq;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
