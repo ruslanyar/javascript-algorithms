@@ -8,9 +8,7 @@
 */
 
 function uniq(arr) {
-  const uniqArr = arr.filter((item, index) => arr.indexOf(item) === index);
-
-  return uniqArr;
+  return [...new Set(arr)];
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
