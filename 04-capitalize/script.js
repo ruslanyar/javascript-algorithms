@@ -15,9 +15,7 @@ function capitalize(str) {
     }
   });
 
-  str = arrayOfWords.join(' ').replace(/\s+/g,' ').trim();
-
-  return str;
+  return arrayOfWords.join(' ').replace(/\s+/g,' ').trim();
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
