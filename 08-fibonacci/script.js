@@ -9,15 +9,19 @@
 */
 
 function fibonacci(n) {
-  const fibonacciNumArray = [0, 1];
+  let prev = 0;
+  let next = 1;
 
-  for (let i = 2; i < n; i++) {
-    fibonacciNumArray.push(fibonacciNumArray[i - 1] + fibonacciNumArray[i - 2]);
+  for (let i = 1; i < n; i++) {
+    let temp = next;
+
+    next = prev + next;
+    prev = temp;
   }
 
-  return fibonacciNumArray[n - 1];
+  return prev;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-console.log(fibonacci(4)); // 2. Четвёртое число последовательности — двойка (0, 1, 1, 2)
+console.log(fibonacci(10)); // 34

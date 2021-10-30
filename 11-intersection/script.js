@@ -8,11 +8,7 @@
 */
 
 function intersection(arr1, arr2) {
-  const array = arr1.filter(item => arr2.includes(item));
-
-  const uniqArray = array.filter((item, index) => array.indexOf(item) === index);
-
-  return uniqArray;
+  return [...new Set(arr1)].filter(value => arr2.includes(value));
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
