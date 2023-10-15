@@ -17,7 +17,7 @@ class ArrayWrapper {
 
   [Symbol.toPrimitive](hint: "number" | "string") {
     if (hint === "string") {
-      return `[${this.nums.toString()}]`;
+      return `[${this.nums}]`; // toString is overcoding
     } else {
       return this.nums.reduce((acc, num) => acc + num, 0);
     }
