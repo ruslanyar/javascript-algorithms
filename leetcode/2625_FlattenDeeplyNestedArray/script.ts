@@ -11,17 +11,20 @@ type MultiDimensionalArray = (number | MultiDimensionalArray)[];
 const flat = (arr: MultiDimensionalArray, n: number): MultiDimensionalArray => {
   if (n === 0) return arr;
 
+  const result: MultiDimensionalArray = [];
+
   for (let i = 0; i < arr.length; i++) {
     const cur = arr[i];
     if (Array.isArray(cur)) {
-      arr.splice(i, 1, ...flat(cur, n - 1));
-      i += cur.length - 1;
+      result.push(...flat(cur, n - 1));
+    } else {
+      result.push(arr[i]);
     }
   }
 
-  return arr;
+  return result;
 };
 
-const arr = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]]
+const arr = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]];
 
 console.log(flat(arr, 1)); // [1, 2, 3, 4, 5, 6, 7, 8, [9, 10, 11], 12, 13, 14, 15]
