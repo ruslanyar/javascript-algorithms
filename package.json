@@ -1,19 +1,20 @@
 {
+  "private": "true",
   "name": "javascript-algorithms",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node --watch",
-    "nodemon": "nodemon"
+    "start": "node --import=tsx --watch",
+    "ninja": "console-ninja node --import=tsx --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.16.11",
-    "nodemon": "^3.1.7",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.4"
+    "@types/node": "^22.13.9",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
   }
 }
